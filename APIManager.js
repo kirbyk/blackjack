@@ -51,7 +51,7 @@ APIManager.stay = function(table) {
 
 APIManager.request = function(command, table, callback) {
   r.post({url: ENDPOINT + 'tables/' + table,
-         form: {username: username, password: password, command: command},
+         form: {username: username, password: password, command: command}},
          callback);
 };
 

@@ -19,10 +19,10 @@ gameManager.gameLoop = function () {
 
 gameManager.start = function() {
 
-	// starts a table
-	// joins the table
-	APIManager.start_table("AYYYY");
-	APIManager.join_table("AYYYY");
+  var table = 'cats';
+
+	APIManager.start_table(table);
+	// APIManager.join_table(table);
 
 	this.gameLoopInterval = setInterval(function() {
 		gameManager.gameLoop();
