@@ -4,6 +4,12 @@ var ENDPOINT = 'http://hackjack.purduehackers.com/';
 var username = 'dreamland';
 var password = 'password';
 
+var table_status = function(table) {
+  get_request(table, function(err,httpResponse,body) {
+    console.log('get_table: ', body);
+  });
+};
+
 var create_table = function(table) {
   request('create', table, function(err,httpResponse,body) {
     console.log('create_table: ', body);
@@ -49,11 +55,16 @@ var stay = function(table) {
 var request = function(command, table, callback) {
   r.post({url: ENDPOINT + 'tables/' + table,
          form: {username: username, password: password, command: command}},
-         callback});
+         callback);
 };
 
 var hack_request = function(command, table, amount, callback) {
   r.post({url: ENDPOINT + 'tables/' + table,
          form: {username: username, password: password, command: command, bet_amt: amount}},
-         callback});
+         callback);
 };
+
+var get_request = function(table, callback) {
+  r(ENDPOINT + 'tables/' + table, callback);
+};
+
