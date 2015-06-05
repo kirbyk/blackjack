@@ -1,5 +1,6 @@
 var r = require('request');
 
+
 // package for HTTP requests
 var APIManager = module.exports;
 
