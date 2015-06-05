@@ -1,6 +1,5 @@
 /*
 
-This file manages the game cycle, betting joining tables, etc.
 
 */
 
